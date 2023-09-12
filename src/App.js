@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <Header />
       <h1>Weather</h1>
-     <button onClick={apiGet}>Load Products</button>
+     <button onClick={apiGet}>Load Product</button>
       { products && <Table list={products} /> }
        {/* <AddForm handlerAddItem={apiPost} /> */}
        <Footer />
