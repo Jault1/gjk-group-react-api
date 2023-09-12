@@ -3,6 +3,7 @@ import Table from './components/Table';
 // import AddForm from './components/AddForm';
 import './App.css';
 import mockAPI from './api/mockapi';
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <h1>Weather</h1>
      <button onClick={apiGet}>Load Products</button>
       { products && <Table list={products} /> }
