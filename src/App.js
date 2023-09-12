@@ -11,7 +11,17 @@ function App() {
 
   const apiGet = async () => {
     try {
-      const response = await mockAPI.get('locations', {headers:{token:process.env.REACT_APP_NOAA_TOKEN}})
+      const response = await mockAPI.get('data', {headers:{token:process.env.REACT_APP_NOAA_TOKEN}})
+
+//       axios.get('https://www.example.com/search', {
+//   params: {
+//     q: 'axios',
+//     page: 2
+//   }
+// })
+
+
+
       .then((response) => console.log(response.data.results));
       
       setProducts(response.data);    
