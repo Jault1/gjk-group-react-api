@@ -3,6 +3,7 @@ import Table from './components/Table';
 // import AddForm from './components/AddForm';
 import './App.css';
 import mockAPI from './api/mockapi';
+import Footer from './components/Footer';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,6 +38,7 @@ function App() {
      <button onClick={apiGet}>Load Products</button>
       { products && <Table list={products} /> }
        {/* <AddForm handlerAddItem={apiPost} /> */}
+       <Footer />
     </div>
   );
 }
