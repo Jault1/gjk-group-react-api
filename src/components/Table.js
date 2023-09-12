@@ -16,8 +16,8 @@ function Table({ list }) {
             list.map((item) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
-                <td>{item.quantity}</td>
-                <td>{item.price}</td>
+                <td>{item.datacoverage}</td>
+                <td>{item.mindate}</td>
               </tr>
             ))}
         </tbody>
