@@ -83,6 +83,7 @@ function App() {
 
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
       <button type="button" onClick={() => getData()}>Search</button>
+      { loading && <Table list={products} /> }
      <Table list={ weatherdata } /> 
      <Footer />
     </div>
