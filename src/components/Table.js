@@ -6,18 +6,18 @@ function Table({ list }) {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>dewpoint</th>
+            <th>humidity</th>
+            <th>Temp</th>
           </tr>
         </thead>
         <tbody>
           {list &&
             list.map((item) => (
               <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.datacoverage}</td>
-                <td>{item.mindate}</td>
+                <td>{item.dewPoint}</td>
+                <td>{item.humidity}</td>
+                <td>{item.temperature}</td>
               </tr>
             ))}
         </tbody>

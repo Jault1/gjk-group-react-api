@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+//import styles from './Footer.module.css';
 
 import twitter from './../images/social/twitter.png';
 import youtube from './../images/social/YouTube.png';
@@ -15,9 +15,9 @@ function Footer() {
             </div>
             <div className="col-lg-3 social">
                 <p className="ps-auto"> 
-                    <a href="https://twitter.com/" target="_blank" className="social twitter pe-3"><img src={twitter} alt="Twitter" height='20' /></a> 
-                    <a href="https://www.youtube.com/c" target="_blank" className="social youtube pe-3"><img src={youtube} alt="YouTube" height='20' /></a> 
-                    <a href="https://www.instagram.com/" target="_blank" className="social instagram pe-3"><img src={instagram} alt="Instagram" height='20' /></a> 
+                    <a href="https://twitter.com/" target="_blank" rel="noreferrer" className="social twitter pe-3"><img src={twitter} alt="Twitter" height='20' /></a> 
+                    <a href="https://www.youtube.com/c" target="_blank" rel="noreferrer" className="social youtube pe-3"><img src={youtube} alt="YouTube" height='20' /></a> 
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="social instagram pe-3"><img src={instagram} alt="Instagram" height='20' /></a> 
                 </p>
             </div>
         </div>

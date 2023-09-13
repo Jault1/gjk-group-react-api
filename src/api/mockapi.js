@@ -8,3 +8,4 @@ console.log(BASE_URL)
 const mockAPI = axios.create({ baseURL: BASE_URL});
 
 export default mockAPI
+
