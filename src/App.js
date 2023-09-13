@@ -17,7 +17,7 @@ function App() {
         const data = await getWeatherData(city);
         setWeatherData(data);
         setLoading(false);
-        console.log("Inside getData")
+        console.log(data)
     }catch(error) {
       console.log(error.message);
       setLoading(false);
@@ -83,8 +83,7 @@ function App() {
 
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
       <button type="button" onClick={() => getData()}>Search</button>
-      { loading && <Table list={products} /> }
-     <Table list={ weatherdata } /> 
+      <Table list={ weatherdata } />  
      <Footer />
     </div>
   );

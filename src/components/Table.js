@@ -2,7 +2,7 @@ import styles from './Table.module.css';
 function Table({ list }) {
   return (
     <div>
-      {/* <p>{list[0].name}</p> */}
+       {/* <p>{list[0].name}</p>  */}
       <table className={styles.table}>
         <thead>
           <tr>
@@ -14,9 +14,10 @@ function Table({ list }) {
         <tbody>
           {list &&
             list.map((item) => (
-              <tr key={item.id}>
-                <td>{item.dewPoint}</td>
-                <td>{item.humidity}</td>
+              <tr>
+              {/* //  key={item.id} */}
+                {/* <td>{item.dewPoint}</td>
+                <td>{item.humidity}</td> */}
                 <td>{item.temperature}</td>
               </tr>
             ))}
