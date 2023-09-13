@@ -15,9 +15,9 @@ function App() {
     try{
         setLoading(true);
         const data = await getWeatherData(city);
-        setWeatherData(data);
+        setWeatherData(data.timelines.minutely.values);
         setLoading(false);
-        console.log(data)
+        //console.log(data.timelines.minutely.values)
     }catch(error) {
       console.log(error.message);
       setLoading(false);
@@ -79,11 +79,19 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Weather</h1>
+      <h1>Get my weather</h1>
 
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
       <button type="button" onClick={() => getData()}>Search</button>
-      <Table list={ weatherdata } />  
+
+          { weatherdata !== null ? (
+
+            <Table list={ weatherdata } />  
+
+        ) : null}
+          
+          
+
      <Footer />
     </div>
   );

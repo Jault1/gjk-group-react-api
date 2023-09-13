@@ -7,7 +7,7 @@ import instagram from './../images/social/instagram.png';
 function Footer() {
   return (
 <>
-<footer className="pt-5 mt-5">
+<footer className="pt-5 mt-5 text-start">
     <div className="container border-top">
         <div className="row pt-5 pb-4">
             <div className="col-sm-9 legal-text">
