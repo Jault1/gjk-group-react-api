@@ -2,3 +2,11 @@
 body > footer a{color:#a1a1a1 !important;}
 footer {background-color:#E1E1E1; padding-top:32px !important;padding-bottom:80px !important;} 
 .social { padding-right: 20px !important;} */
+#banner {
+    width: 100%;
+    height: 50px;
+}
+
+.header {
+    background-color: #003366;
+}

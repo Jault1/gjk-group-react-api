@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+#banner {
+  width: 100%;
+  height: 50px;
+}
+
+#header {
+  background-color: #003366 !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

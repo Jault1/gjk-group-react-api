@@ -1,27 +1,27 @@
 import styles from './Table.module.css';
 function Table({ list }) {
+  console.log(list)
   return (
     <div>
        {/* <p>{list[0].name}</p>  */}
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>dewpoint</th>
-            <th>humidity</th>
+            <th>Weather Code</th>
+            <th>Precipitation Probability</th>
             <th>Temp</th>
           </tr>
         </thead>
-        <tbody>
-          {list &&
-            list.map((item) => (
-              <tr>
-              {/* //  key={item.id} */}
-                {/* <td>{item.dewPoint}</td>
-                <td>{item.humidity}</td> */}
-                <td>{item.temperature}</td>
+         <tbody>
+           {list &&
+            list.map((item) => ( 
+              <tr key={item.id}>
+                 {/* <td>{item.weatherCode}</td>
+                <td>{item.precipitationProbability}</td> 
+                <td>{item.temperature}</td>  */}
               </tr>
-            ))}
-        </tbody>
+           ))} 
+        </tbody> 
       </table>
     </div>
   );

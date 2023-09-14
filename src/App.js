@@ -14,10 +14,10 @@ function App() {
   const getData = async () => {
     try{
         setLoading(true);
-        const data = await getWeatherData(city);
-        setWeatherData(data);
+        const response = await getWeatherData(city);
+        setWeatherData(response);
         setLoading(false);
-        console.log(data)
+        console.log(response.timelines)
     }catch(error) {
       console.log(error.message);
       setLoading(false);
@@ -79,11 +79,19 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Weather</h1>
+      <h1>Get my weather</h1>
 
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
       <button type="button" onClick={() => getData()}>Search</button>
-      <Table list={ weatherdata } />  
+
+          { weatherdata !== null ? (
+
+             <Table list={ weatherdata } />  
+
+        ) : null}
+          
+          
+
      <Footer />
     </div>
   );
