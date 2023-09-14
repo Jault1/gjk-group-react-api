@@ -19,7 +19,7 @@ function TableDaily({ list }) {
            {list &&
             list.map((item) => ( 
               <tr key={item.id}>
-                 <td>{item.time}</td>
+                <td>{item.time}</td>
                 <td>{item.values.temperatureMin}</td> 
                 <td>{item.values.temperatureMax}</td>  
                 <td>{item.values.humidityAvg}</td>  
