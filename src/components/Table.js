@@ -16,9 +16,9 @@ function Table({ list }) {
            {list &&
             list.map((item) => ( 
               <tr key={item.id}>
-                 {/* <td>{item.weatherCode}</td>
+                 <td>{item.weatherCode}</td>
                 <td>{item.precipitationProbability}</td> 
-                <td>{item.temperature}</td>  */}
+                <td>{item.temperature}</td>  
               </tr>
            ))} 
         </tbody> 
