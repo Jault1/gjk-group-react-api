@@ -1,13 +1,14 @@
 import styles from './Table.module.css';
-function Table({ list }) {
+
+function TableDaily({ list }) {
   console.log(list)
   return (
     <div>
        {/* <p>{list[0].name}</p>  */}
-       
+       <h2>Daily Weather</h2>
       <table className={styles.table}>
         <thead>
-          <tr>
+          <tr className="tableHeader">
             <th>Time</th>
             <th>Temp Min</th>
             <th>Temp Max Probability</th>
@@ -31,4 +32,4 @@ function Table({ list }) {
   );
 }
 
-export default Table;
+export default TableDaily;

@@ -4,7 +4,7 @@ const baseUrl = 'https://api.tomorrow.io/v4/weather/forecast?';
 
 export const getWeatherData = async (cityname) => {
     try{
-        const {data} = await axios.get(baseUrl + `apikey=4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No&location=${cityname}`);
+        const {data} = await axios.get(baseUrl + `apikey=4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No&location=${cityname}`)
         return data;
         console.table(data);
     }catch(error) {
