@@ -14,10 +14,10 @@ function App() {
   const getData = async () => {
     try{
         setLoading(true);
-        const data = await getWeatherData(city);
-        setWeatherData(data.timelines.minutely.values);
+        const response = await getWeatherData(city);
+        setWeatherData(response);
         setLoading(false);
-        //console.log(data.timelines.minutely.values)
+        console.log(response.timelines)
     }catch(error) {
       console.log(error.message);
       setLoading(false);
@@ -86,7 +86,7 @@ function App() {
 
           { weatherdata !== null ? (
 
-            <Table list={ weatherdata } />  
+             <Table list={ weatherdata } />  
 
         ) : null}
           
