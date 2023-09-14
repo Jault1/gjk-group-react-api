@@ -4,7 +4,7 @@ import "./App.css";
 import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import BeatLoader from "react-spinners/BeatLoader";
+import {ScaleLoader} from 'react-spinners';
 
 const override: CSSProperties = {
   display: "block",
@@ -19,18 +19,21 @@ function App() {
   let [color, setColor] = useState("#ffffff"); // loader/spinner color
 
   const getData = async () => {
-    try {
-      setLoading(true);
-      const response = await getWeatherData(city);
-      setWeatherData(response);
-      setLoading(false);
-      // console.log(response.timelines)
-    } catch (error) {
+    try{
+        setLoading(true);
+        const data = await getWeatherData(city);
+        setWeatherData(data);
+        setLoading(false);
+    }catch(error) {
       console.log(error.message);
       setLoading(false);
     }
-  };
-
+  }
+  const override = `
+  display: block;
+  margin: 0 auto;
+  border-color: #5985B2;
+  `;
   useEffect(() => {
     getData();
   }, []);
@@ -74,28 +77,22 @@ function App() {
       <Header />
       <h1>Get my weather.</h1>
 
-      <input
-        type="text"
-        className="me-2"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter your city name"
-      />
-      <button type="button" className="mb-5" onClick={() => getData()}>
-        Search
-      </button>
+      <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
+          <button type="button" className="mb-5" onClick={() => getData()}>Search</button>
 
-      {loading ? (
-        <BeatLoader
-          color={color}
-          loading={loading}
-          cssOverride={override}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      ) : (
-        <>
+          {loading ? (
+          <div className="loader-container">
+            <ScaleLoader
+              css={override}
+              size={300}
+              color= {"#5985B2"}
+              loading= {loading}
+              />
+          </div>
+
+        ) : (
+
+          <>
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
             <TableDaily list={weatherdata.timelines.daily} />
