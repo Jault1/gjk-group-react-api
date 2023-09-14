@@ -12,8 +12,28 @@
   height: 50px;
 }
 
+/* 
+  #23578C // base
+  #003366 // main
+  #5985B2 // accent
+*/
+
 #header {
   background-color: #003366 !important;
+}
+
+#header h1 {
+  color: white;
+  font-weight: bolder;
+}
+
+#header h2 {
+  color: white;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  color: #23578C;
 }
 
 @media (prefers-reduced-motion: no-preference) {
