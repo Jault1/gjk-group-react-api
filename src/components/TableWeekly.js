@@ -1,6 +1,6 @@
 import styles from './Table.module.css';
 
-function TableDaily({ list, conditions }) {
+function TableWeekly({ list, conditions }) {
   console.log(list)
   console.log(conditions)
   const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -29,9 +29,9 @@ function TableDaily({ list, conditions }) {
                 {/* <td>{item.time}</td> */}
                 <td>{day}</td>
                 <td>{conditions[code]}</td>
-                <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 F'}</td> 
+                <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 C'}</td> 
                 <td>{(item.values.humidityAvg).toFixed(0) + '%'}</td>  
-                <td>{(item.values.windSpeedAvg).toFixed(1) + ' mph'}</td>
+                <td>{(item.values.windSpeedAvg).toFixed(1) + ' m/s'}</td>
              </tr>
               )
             })} 
@@ -41,4 +41,4 @@ function TableDaily({ list, conditions }) {
   );
 }
 
-export default TableDaily;
+export default TableWeekly;

@@ -28,9 +28,9 @@ function TableDaily({ list, conditions }) {
                 {/* <td>{item.time}</td> */}
                 <td>{hour}</td>
                 <td>{conditions[code]}</td>
-                <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 F'}</td> 
+                <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 C'}</td> 
                 <td>{(item.values.humidityAvg).toFixed(0) + '%'}</td>  
-                <td>{(item.values.windSpeedAvg).toFixed(1) + ' mph'}</td>
+                <td>{(item.values.windSpeedAvg).toFixed(1) + ' m/s'}</td>
              </tr>
               )
             })} 
