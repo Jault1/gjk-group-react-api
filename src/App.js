@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TableDaily from "./components/TableDaily";
+import TableWeekly from "./components/TableDaily";
 import "./App.css";
 import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
@@ -99,7 +99,7 @@ function App() {
           <>
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
-            <TableDaily list={weatherdata.timelines.daily} conditions={conditions} />
+            <TableWeekly list={weatherdata.timelines.daily} conditions={conditions} />
           ) : null}
         </>
       )}
