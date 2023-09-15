@@ -5,12 +5,16 @@ import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {ScaleLoader} from 'react-spinners';
+import conditions from './weatherCodes.json';
 
 const override: CSSProperties = {
   display: "block",
   margin: "0 auto",
   borderColor: "#5985B2",
 };
+
+conditions = conditions.weatherCodeFullDay;
+
 
 function App() {
   const [weatherdata, setWeatherData] = useState(null);
@@ -95,7 +99,7 @@ function App() {
           <>
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
-            <TableDaily list={weatherdata.timelines.daily} />
+            <TableDaily list={weatherdata.timelines.daily} conditions={conditions} />
           ) : null}
         </>
       )}
