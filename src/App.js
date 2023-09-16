@@ -5,6 +5,10 @@ import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {ScaleLoader} from 'react-spinners';
+import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
+import Table from "./components/Table";
+import Home from "./components/Home";
+import { Search } from "./components/Search";
 
 const override: CSSProperties = {
   display: "block",
@@ -13,30 +17,7 @@ const override: CSSProperties = {
 };
 
 function App() {
-  const [weatherdata, setWeatherData] = useState(null);
-  const [city, setCity] = useState("New York City");
-  const [loading, setLoading] = useState(false); // Page or api loading?
-  let [color, setColor] = useState("#ffffff"); // loader/spinner color
 
-  const getData = async () => {
-    try{
-        setLoading(true);
-        const data = await getWeatherData(city);
-        setWeatherData(data);
-        setLoading(false);
-    }catch(error) {
-      console.log(error.message);
-      setLoading(false);
-    }
-  }
-  const override = `
-  display: block;
-  margin: 0 auto;
-  border-color: #5985B2;
-  `;
-  useEffect(() => {
-    getData();
-  }, []);
 
   // const params = {
   //   apikey: '4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No',
@@ -75,30 +56,27 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Get my weather.</h1>
 
-      <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
-          <button type="button" className="mb-5" onClick={() => getData()}>Search</button>
+          <BrowserRouter>
+        <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li><Link to={'home'} className="nav-link"> Home </Link></li>
+            <li><Link to={'tableDaily'} className="nav-link">Daily</Link></li>
+            <li><Link to={'table'} className="nav-link">Table</Link></li>
+          </ul>
+          </nav>
+          <hr/>
+      
+          <Routes >
+          <Route path='/' element={<Search/>}/>
+          <Route path='/Home' element={<Home/>} />
+          <Route path='/TableDaily' element={<TableDaily/>} />
+          <Route path='/Table' element={<Table/>} />
+          </Routes>
+        </div>
+      </BrowserRouter>
 
-          {loading ? (
-          <div className="loader-container">
-            <ScaleLoader
-              css={override}
-              size={300}
-              color= {"#5985B2"}
-              loading= {loading}
-              />
-          </div>
-
-        ) : (
-
-          <>
-          {weatherdata !== null ? (
-            // console.log(weatherdata.timelines.daily)
-            <TableDaily list={weatherdata.timelines.daily} />
-          ) : null}
-        </>
-      )}
 
       <Footer />
     </div>
