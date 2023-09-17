@@ -2,46 +2,21 @@ import { useState, useEffect } from "react";
 import TableWeekly from "./components/TableWeekly";
 import TableDaily from "./components/TableDaily";
 import "./App.css";
-import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
+import Table from "./components/Table";
+import Home from "./components/Home";
+import { Search } from "./components/Search";
 import {ScaleLoader} from 'react-spinners';
 import conditions from './weatherCodes.json';
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "#5985B2",
-};
 
 conditions = conditions.weatherCodeFullDay;
 
 
 function App() {
-  const [weatherdata, setWeatherData] = useState(null);
-  const [city, setCity] = useState("New York City");
-  const [loading, setLoading] = useState(false); // Page or api loading?
-  let [color, setColor] = useState("#ffffff"); // loader/spinner color
 
-  const getData = async () => {
-    try{
-        setLoading(true);
-        const data = await getWeatherData(city);
-        setWeatherData(data);
-        setLoading(false);
-    }catch(error) {
-      console.log(error.message);
-      setLoading(false);
-    }
-  }
-  const override = `
-  display: block;
-  margin: 0 auto;
-  border-color: #5985B2;
-  `;
-  useEffect(() => {
-    getData();
-  }, []);
 
   // const params = {
   //   apikey: '4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No',
@@ -80,7 +55,25 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Get my weather.</h1>
+          <BrowserRouter>
+        <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li><Link to={'search'} className="nav-link"> Home </Link></li>
+            <li><Link to={'tableDaily'} className="nav-link">Daily</Link></li>
+            <li><Link to={'table'} className="nav-link">Table</Link></li>
+          </ul>
+          </nav>
+          <hr/>
+      
+          <Routes >
+          <Route path='/Search' element={<Search/>}/>
+          <Route path='/' element={<Home/>} />
+          <Route path='/TableDaily' element={<TableDaily/>} />
+          <Route path='/Table' element={<Table/>} />
+          </Routes>
+        </div>
+      </BrowserRouter>
 
       <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
           <button type="button" className="mb-5" onClick={() => getData()}>Search</button>
