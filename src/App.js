@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import TableWeekly from "./components/TableWeekly";
 import TableDaily from "./components/TableDaily";
 import "./App.css";
 import Header from "./components/Header";
@@ -6,6 +8,11 @@ import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } f
 import Table from "./components/Table";
 import Home from "./components/Home";
 import { Search } from "./components/Search";
+import {ScaleLoader} from 'react-spinners';
+import conditions from './weatherCodes.json';
+
+
+conditions = conditions.weatherCodeFullDay;
 
 
 function App() {
@@ -68,6 +75,31 @@ function App() {
         </div>
       </BrowserRouter>
 
+      <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
+          <button type="button" className="mb-5" onClick={() => getData()}>Search</button>
+
+          {loading ? (
+          <div className="loader-container">
+            <ScaleLoader
+              css={override}
+              size={300}
+              color= {"#5985B2"}
+              loading= {loading}
+              />
+          </div>
+
+        ) : (
+
+          <>
+          {weatherdata !== null ? (
+            // console.log(weatherdata.timelines.daily)
+            <>
+            <TableWeekly list={weatherdata.timelines.daily} conditions={conditions} />
+            <TableDaily list={weatherdata.timelines.daily} conditions={conditions} />
+            </>
+          ) : null}
+        </>
+      )}
 
       <Footer />
     </div>

@@ -1,16 +1,17 @@
 import styles from './Table.module.css';
 
-function TableDaily({ list, conditions }) {
+function TableWeekly({ list, conditions }) {
   console.log(list)
   console.log(conditions)
+  const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   return (
     <div>
        {/* <p>{list[0].name}</p>  */}
-       <h2>Today's Forecast</h2>
+       <h2>6-Day Forecast</h2>
       <table className={styles.table}>
         <thead>
           <tr className="tableHeader">
-            <th>Hour</th>
+            <th>Day</th>
             <th>Conditions</th>
             <th>Temperature</th>
             <th>Humidity</th>
@@ -21,12 +22,12 @@ function TableDaily({ list, conditions }) {
            {list &&
             list.map((item) => {
               const d = new Date(item.time);
-              let hour = d.getHours(); 
+              let day = dayArray[d.getDay()]; 
               const code = item.values.weatherCodeMax;
               return (
               <tr key={item.id}>
                 {/* <td>{item.time}</td> */}
-                <td>{hour}</td>
+                <td>{day}</td>
                 <td>{conditions[code]}</td>
                 <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 C'}</td> 
                 <td>{(item.values.humidityAvg).toFixed(0) + '%'}</td>  
@@ -40,4 +41,4 @@ function TableDaily({ list, conditions }) {
   );
 }
 
-export default TableDaily;
+export default TableWeekly;
