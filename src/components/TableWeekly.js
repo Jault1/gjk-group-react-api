@@ -1,4 +1,5 @@
 import styles from './Table.module.css';
+import { Link } from 'react-router-dom';
 
 function TableWeekly({ list, conditions }) {
   console.log(list)
@@ -7,7 +8,7 @@ function TableWeekly({ list, conditions }) {
   return (
     <div>
        {/* <p>{list[0].name}</p>  */}
-       <h2>6-Day Forecast</h2>
+       <h2>6 Day Forecast</h2>
       <table className={styles.table}>
         <thead>
           <tr className="tableHeader">
@@ -37,6 +38,9 @@ function TableWeekly({ list, conditions }) {
             })} 
         </tbody> 
       </table>
+      <Link to="/Search">
+      <button type="button" className="btn btn-light"> Search another city </button>
+      </Link>
     </div>
   );
 }
