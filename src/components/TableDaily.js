@@ -2,7 +2,7 @@ import styles from './Table.module.css';
 import img1000 from './../images/icons/1000.png';
 import img1001 from './../images/icons/1001.png';
 import img4000 from './../images/icons/4000.png';
-
+import { Link } from 'react-router-dom';
 
 function TableDaily({ list, conditions }) {
   console.log(list)
@@ -55,11 +55,6 @@ function TableDaily({ list, conditions }) {
                       ? <img className="img-fluid" src={img4000} alt="raining" height='20' /> 
                       : <span></span> 
                     }
-    
-                    
-                    
-                    
-                    
                     </td>
 
                 <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 C'}</td> 
@@ -70,6 +65,9 @@ function TableDaily({ list, conditions }) {
             })} 
         </tbody> 
       </table>
+      <Link to="/Weekly">
+      <button type="button" className="btn btn-light"> Weekly Forecast </button>
+      </Link>
     </div>
   );
 }
