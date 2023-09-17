@@ -1,18 +1,25 @@
 import axios from 'axios';
 
 const baseUrl = 'https://api.tomorrow.io/v4/weather/forecast?';
-
+let apiKey = "4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No"
 export const getWeatherData = async (cityname) => {
+    console.log(apiKey)
     try {
-        const {data} = await axios.get(baseUrl + `apikey=4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No&location=${cityname}`)
-        return data;
-        console.table(data);
+        
+        const {data1} = await axios.get(baseUrl + `apikey=${apiKey}&location=${cityname}`)
+       console.log(data1)
+        return data1;
+      
     } catch(error) {
         if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
             console.log(error.response.data);
             console.log(error.response.status);
+            if (error.response.status===429){
+                apiKey = "new API KEy";
+                getWeatherData(cityname);
+            }
             console.log(error.response.headers);
         } else if (error.request) {
             // The request was made but no response was received
