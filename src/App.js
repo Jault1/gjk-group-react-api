@@ -1,20 +1,12 @@
-import { useState, useEffect } from "react";
 import TableDaily from "./components/TableDaily";
 import "./App.css";
-import { getWeatherData } from "./api/weatherapi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {ScaleLoader} from 'react-spinners';
 import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
 import Table from "./components/Table";
 import Home from "./components/Home";
 import { Search } from "./components/Search";
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "#5985B2",
-};
 
 function App() {
 
@@ -56,12 +48,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-
           <BrowserRouter>
         <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
-            <li><Link to={'home'} className="nav-link"> Home </Link></li>
+            <li><Link to={'search'} className="nav-link"> Home </Link></li>
             <li><Link to={'tableDaily'} className="nav-link">Daily</Link></li>
             <li><Link to={'table'} className="nav-link">Table</Link></li>
           </ul>
@@ -69,8 +60,8 @@ function App() {
           <hr/>
       
           <Routes >
-          <Route path='/' element={<Search/>}/>
-          <Route path='/Home' element={<Home/>} />
+          <Route path='/Search' element={<Search/>}/>
+          <Route path='/' element={<Home/>} />
           <Route path='/TableDaily' element={<TableDaily/>} />
           <Route path='/Table' element={<Table/>} />
           </Routes>
