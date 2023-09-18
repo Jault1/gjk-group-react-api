@@ -3,6 +3,8 @@ import img1000 from './../images/icons/1000.png';
 import img1001 from './../images/icons/1001.png';
 import img4000 from './../images/icons/4000.png';
 import { Link } from 'react-router-dom';
+import img1101 from './../images/icons/partly_cloudy.png';
+import img8000 from './../images/icons/storms.png'
 
 function TableDaily({ list, conditions }) {
   console.log(list)
@@ -55,6 +57,18 @@ function TableDaily({ list, conditions }) {
                       ? <img className="img-fluid" src={img4000} alt="raining" height='20' /> 
                       : <span></span> 
                     }
+                    { //partly cloudy or mostly cloudy
+                      ([code] == 1101 || [code] == 1102)
+                      ? <img className="img-fluid" src={img1101} alt="partly cloudy" height='20' /> 
+                      : <span></span> 
+                    }
+                    { //thunderstorm, mostly clear and thunderstorm, partly cloudy and thunderstorm, mostly cloudy and thunderstorm
+                      //
+                      ([code] == 8000 || [code] == 8001 || [code] == 8003 || [code] == 8002)
+                      ? <img className="img-fluid" src={img8000} alt="storms" height='20' /> 
+                      : <span></span> 
+                    }
+                    
                     </td>
 
                 <td>{(item.values.temperatureAvg).toFixed(0) + '\u00b0 C'}</td> 
