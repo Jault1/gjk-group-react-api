@@ -8,7 +8,7 @@ function Home(){
     <Link to="/search">
    <img src={WorldMap} alt="Map Of Whole World" />
    </Link>
-   <p><center> Click an image to continue </center></p>
+   <center><p> Click an image to continue </p></center>
    </div>
    </>
    )}

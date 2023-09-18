@@ -17,7 +17,7 @@ export const getWeatherData = async (cityname) => {
             console.log(error.response.data);
             console.log(error.response.status);
             if (error.response.status===429){
-                apiKey = "new API KEy";
+                apiKey = "lfBUGbRVFakpMXLVOIGoYRrPAmDsHeEI";
                 getWeatherData(cityname);
             }
             console.log(error.response.headers);
