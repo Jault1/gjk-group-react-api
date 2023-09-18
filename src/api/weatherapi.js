@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const baseUrl = 'https://api.tomorrow.io/v4/weather/forecast?';
-let apiKey = "4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No"
+let apiKey ="4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No"
 export const getWeatherData = async (cityname) => {
     console.log(apiKey)
     try {
@@ -17,7 +17,7 @@ export const getWeatherData = async (cityname) => {
             console.log(error.response.data);
             console.log(error.response.status);
             if (error.response.status===429){
-                apiKey = "lfBUGbRVFakpMXLVOIGoYRrPAmDsHeEI";
+                apiKey = "RLkrjD1skIMVemFRzXgyPeNLHpmXX5Ky";
                 getWeatherData(cityname);
             }
             console.log(error.response.headers);
