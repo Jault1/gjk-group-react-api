@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import TableWeekly from "./components/TableWeekly";
 import TableDaily from "./components/TableDaily";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
-import Table from "./components/Table";
+// import Table from "./components/Table";
 import Home from "./components/Home";
 import { Search } from "./components/Search";
-import {ScaleLoader} from 'react-spinners';
+// import {ScaleLoader} from 'react-spinners';
 import conditions from './weatherCodes.json';
 
 
@@ -17,40 +17,6 @@ conditions = conditions.weatherCodeFullDay;
 
 function App() {
 
-
-  // const params = {
-  //   apikey: '4fL4g5wwRWiCXgM9cIQQncjVY9yFv9No',
-  //   location: 'new york'
-  // }
-
-  //   axios.get('https://api.tomorrow.io/v4/weather/forecast', {params})
-  //     .then(response => {
-  //       //const apiResponse = response.data;
-  //       //console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
-  //       console.log(response);
-  //     }).catch(function (error) {
-  //         console.log(error.config);
-  //     });
-
-  // const apiGet = async () => {
-  //   try {
-  //     const response = await mockAPI.get('locations', {headers:{token:process.env.REACT_APP_NOAA_TOKEN}})
-  //     .then((response) => console.log(response.data.results));
-  //     setProducts(response.data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
-
-  // const apiPost = async (newProduct) => {
-  //   try {
-  //     const response = await mockAPI.post(`/product`, newProduct)
-  //     console.log(response.data);
-  //     apiGet();
-  //   } catch(error) {
-  //     console.log(error.message);
-  //   };
-  // }
 
   return (
     <div className="App">

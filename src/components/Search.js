@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import TableDaily from "./TableDaily";
 import { getWeatherData } from "../api/weatherapi";
 import {ScaleLoader} from 'react-spinners';
-
+import conditions from '../weatherCodes.json';
 
 const override: CSSProperties = {
   display: "block",
@@ -10,18 +10,21 @@ const override: CSSProperties = {
   borderColor: "#5985B2",
 };
 
+conditions = conditions.weatherCodeFullDay;
+
 export function Search (){ 
     
     const [weatherdata, setWeatherData] = useState(null);
     const [city, setCity] = useState();
     const [loading, setLoading] = useState(false); // Page or api loading?
-    let [color, setColor] = useState("#ffffff"); // loader/spinner color
-  
+
     const getData = async () => {
+      
       try{
           setLoading(true);
           const data = await getWeatherData(city);
           setWeatherData(data);
+          console.log(weatherdata);
           setLoading(false);
       }catch(error) {
         console.log(error.message);
@@ -33,9 +36,9 @@ export function Search (){
     margin: 0 auto;
     border-color: #5985B2;
     `;
-    useEffect(() => {
-      getData();
-    }, []);
+    // useEffect(() => {
+    //   getData();
+    // }, []);
   
   return (<>
 
@@ -59,7 +62,9 @@ export function Search (){
           <>
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
-            <TableDaily list={weatherdata?.timelines?.daily} />
+            
+            <TableDaily list={weatherdata?.timelines?.daily} conditions={conditions} />
+            
           ) : null}
         </>
       )}

@@ -5,7 +5,7 @@ function Home(){
     return(
     <>
     <div className="home">
-    <Link to="/search">
+    <Link to="/Search">
    <img src={WorldMap} alt="Map Of Whole World" />
    </Link>
    <center><p> Click an image to continue </p></center>

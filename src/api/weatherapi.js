@@ -6,9 +6,11 @@ export const getWeatherData = async (cityname) => {
     console.log(apiKey)
     try {
         
-        const {data1} = await axios.get(baseUrl + `apikey=${apiKey}&location=${cityname}`)
-       console.log(data1)
-        return data1;
+        // const {data1} = await axios.get(baseUrl + `apikey=${apiKey}&location=${cityname}`)
+        const {data} = await axios.get(baseUrl + `apikey=${apiKey}&location=${cityname}`)
+        console.log("Inside api/weatherapi:" + " " + baseUrl + `apikey=${apiKey}&location=${cityname}`);
+       console.log(data)
+        return data;
       
     } catch(error) {
         if (error.response) {
@@ -16,11 +18,11 @@ export const getWeatherData = async (cityname) => {
             // that falls out of the range of 2xx
             console.log(error.response.data);
             console.log(error.response.status);
-            if (error.response.status===429){
-                apiKey = "RLkrjD1skIMVemFRzXgyPeNLHpmXX5Ky";
-                getWeatherData(cityname);
-            }
-            console.log(error.response.headers);
+            // if (error.response.status===429){
+            //     apiKey ="RLkrjD1skIMVemFRzXgyPeNLHpmXX5Ky"
+            //     getWeatherData(cityname);
+            // }
+            // console.log(error.response.headers);
         } else if (error.request) {
             // The request was made but no response was received
             // `error.request` is an instance of XMLHttpRequest in the browser and an instance of

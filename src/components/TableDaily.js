@@ -5,6 +5,8 @@ import img4000 from './../images/icons/4000.png';
 import { Link } from 'react-router-dom';
 import img1101 from './../images/icons/partly_cloudy.png';
 import img8000 from './../images/icons/storms.png'
+// import conditions from './../weatherCodes.json';
+
 
 function TableDaily({ list, conditions }) {
   console.log(list)
