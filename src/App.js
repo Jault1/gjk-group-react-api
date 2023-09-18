@@ -56,26 +56,17 @@ function App() {
     <div className="App">
       <Header />
           <BrowserRouter>
-        <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <ul className="navbar-nav mr-auto">
-            <li><Link to={'search'} className="nav-link"> Home </Link></li>
-            <li><Link to={'tableDaily'} className="nav-link">Daily</Link></li>
-            <li><Link to={'table'} className="nav-link">Table</Link></li>
-          </ul>
-          </nav>
-          <hr/>
-      
+        <div>    
           <Routes >
           <Route path='/Search' element={<Search/>}/>
           <Route path='/' element={<Home/>} />
-          <Route path='/TableDaily' element={<TableDaily/>} />
-          <Route path='/Table' element={<Table/>} />
+          <Route path='/Daily' element={<TableDaily/>} />
+          <Route path='/Weekly' element={<TableWeekly/>} />
           </Routes>
         </div>
       </BrowserRouter>
 
-      <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
+      {/* <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name"/>
           <button type="button" className="mb-5" onClick={() => getData()}>Search</button>
 
           {loading ? (
@@ -99,7 +90,7 @@ function App() {
             </>
           ) : null}
         </>
-      )}
+      )} */}
 
       <Footer />
     </div>

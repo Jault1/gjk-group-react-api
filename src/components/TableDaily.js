@@ -2,9 +2,9 @@ import styles from './Table.module.css';
 import img1000 from './../images/icons/1000.png';
 import img1001 from './../images/icons/1001.png';
 import img4000 from './../images/icons/4000.png';
+import { Link } from 'react-router-dom';
 import img1101 from './../images/icons/partly_cloudy.png';
 import img8000 from './../images/icons/storms.png'
-
 
 function TableDaily({ list, conditions }) {
   console.log(list)
@@ -79,6 +79,9 @@ function TableDaily({ list, conditions }) {
             })} 
         </tbody> 
       </table>
+      <Link to="/Weekly">
+      <button type="button" className="btn btn-light"> Weekly Forecast </button>
+      </Link>
     </div>
   );
 }
