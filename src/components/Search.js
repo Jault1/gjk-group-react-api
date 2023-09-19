@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import TableDaily from "./TableDaily";
+import TableWeekly from "./TableWeekly";
+import TableDaily from "./TableDaily"
 import { getWeatherData } from "../api/weatherapi";
 import {ScaleLoader} from 'react-spinners';
 import conditions from '../weatherCodes.json';
@@ -14,8 +15,8 @@ conditions = conditions.weatherCodeFullDay;
 
 export function Search (){ 
     
-    const [weatherdata, setWeatherData] = useState(null);
-    const [city, setCity] = useState();
+    const [weatherdata, setWeatherData] = useState();
+    const [city, setCity] = useState("London");
     const [loading, setLoading] = useState(false); // Page or api loading?
 
     const getData = async () => {
@@ -62,9 +63,10 @@ export function Search (){
           <>
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
-            
-            <TableDaily list={weatherdata?.timelines?.daily} conditions={conditions} />
-            
+            <>
+            <TableWeekly list={weatherdata?.timelines?.daily} conditions={conditions} />
+            {/* <TableDaily list={weatherdata?.timelines?.hourly} conditions={conditions} /> */}
+            </>
           ) : null}
         </>
       )}
