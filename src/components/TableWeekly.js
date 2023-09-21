@@ -8,6 +8,7 @@ import img8000 from './../images/icons/storms.png'
 
 
 function TableWeekly({ list, conditions }) {
+  const city="Duabi";
   console.log(list)
   //console.log(conditions)
   const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -82,7 +83,7 @@ function TableWeekly({ list, conditions }) {
             })} 
         </tbody> 
       </table>
-      <Link to="/Search">
+      <Link to="/Home">
       <button type="button" className="btn btn-light"> Search another city </button>
       </Link>
     </div>

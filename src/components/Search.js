@@ -4,6 +4,7 @@ import TableDaily from "./TableDaily"
 import { getWeatherData } from "../api/weatherapi";
 import {ScaleLoader} from 'react-spinners';
 import conditions from '../weatherCodes.json';
+import { Outlet, useNavigate } from "react-router-dom";
 
 const override: CSSProperties = {
   display: "block",
@@ -18,9 +19,10 @@ export function Search (){
     const [weatherdata, setWeatherData] = useState();
     const [city, setCity] = useState("London");
     const [loading, setLoading] = useState(false); // Page or api loading?
-
+    const navigatior = useNavigate()
     const getData = async () => {
-      
+     
+      navigatior(`/Daily/${city}`);
       try{
           setLoading(true);
           const data = await getWeatherData(city);
@@ -64,8 +66,9 @@ export function Search (){
           {weatherdata !== null ? (
             // console.log(weatherdata.timelines.daily)
             <>
-            <TableWeekly list={weatherdata?.timelines?.daily} conditions={conditions} />
-            {/* <TableDaily list={weatherdata?.timelines?.hourly} conditions={conditions} /> */}
+            <Outlet/>
+            {/* <TableWeekly list={weatherdata?.timelines?.daily} conditions={conditions} />
+            <TableDaily list={weatherdata?.timelines?.hourly} conditions={conditions} /> */}
             </>
           ) : null}
         </>

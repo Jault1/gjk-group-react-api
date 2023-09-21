@@ -5,11 +5,17 @@ import img4000 from "./../images/icons/4000.png";
 import { Link } from "react-router-dom";
 import img1101 from "./../images/icons/partly_cloudy.png";
 import img8000 from "./../images/icons/storms.png";
+import { useParams } from "react-router-dom";
 // import conditions from './../weatherCodes.json';
-
+// import getData Function
 function TableDaily({ list, conditions }) {
   console.log(list);
   //console.log(conditions)
+
+  //ger location
+  const {locationID} = useParams();
+  // get data and publish it 
+  console.log(locationID)
   return (
     <div>
       {/* <p>{list[0].name}</p>  */}
