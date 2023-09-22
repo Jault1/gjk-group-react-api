@@ -5,10 +5,10 @@ function Home(){
     return(
     <>
     <div className="home">
-    <Link to="/Search">
-   <img src={WorldMap} alt="Map Of Whole World" />
+    <Link to="/Weekly">
+   <img className="img-fluid" src={WorldMap} alt="Map Of Whole World" />
    </Link>
-   <center><p> Click an image to continue </p></center>
+   <center><h3 className="pt-5"> Click the image to continue </h3></center>
    </div>
    </>
    )}
