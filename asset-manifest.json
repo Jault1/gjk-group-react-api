@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gjk-group-react-api/static/css/main.9ad11d92.css",
-    "main.js": "/gjk-group-react-api/static/js/main.fd33d9ec.js",
-    "static/media/WorldMap.png": "/gjk-group-react-api/static/media/WorldMap.103937acd75d4dd1e41b.png",
-    "static/media/AdobeStock_211524227.png": "/gjk-group-react-api/static/media/AdobeStock_211524227.d12dac3b38974d1d4dda.png",
-    "static/media/c.png": "/gjk-group-react-api/static/media/c.d7a628a8573e1221f744.png",
-    "static/media/f.png": "/gjk-group-react-api/static/media/f.77faaa0ec4af54a62cda.png",
-    "index.html": "/gjk-group-react-api/index.html",
-    "main.9ad11d92.css.map": "/gjk-group-react-api/static/css/main.9ad11d92.css.map",
-    "main.fd33d9ec.js.map": "/gjk-group-react-api/static/js/main.fd33d9ec.js.map"
+    "main.css": "/Jault1/gjk-group-react-api/static/css/main.d4cbe930.css",
+    "main.js": "/Jault1/gjk-group-react-api/static/js/main.724851fb.js",
+    "static/media/WorldMap.png": "/Jault1/gjk-group-react-api/static/media/WorldMap.103937acd75d4dd1e41b.png",
+    "static/media/AdobeStock_211524227.png": "/Jault1/gjk-group-react-api/static/media/AdobeStock_211524227.d12dac3b38974d1d4dda.png",
+    "static/media/c.png": "/Jault1/gjk-group-react-api/static/media/c.d7a628a8573e1221f744.png",
+    "static/media/f.png": "/Jault1/gjk-group-react-api/static/media/f.77faaa0ec4af54a62cda.png",
+    "index.html": "/Jault1/gjk-group-react-api/index.html",
+    "main.d4cbe930.css.map": "/Jault1/gjk-group-react-api/static/css/main.d4cbe930.css.map",
+    "main.724851fb.js.map": "/Jault1/gjk-group-react-api/static/js/main.724851fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ad11d92.css",
-    "static/js/main.fd33d9ec.js"
+    "static/css/main.d4cbe930.css",
+    "static/js/main.724851fb.js"
   ]
 }
