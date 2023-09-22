@@ -9,7 +9,7 @@
 
 #banner {
   width: 100%;
-  height: 50px;
+  height: 100px;
 }
 
 /* 
@@ -34,6 +34,15 @@
 
 h1, h2, h3 {
   color: #23578C;
+}
+
+.padButtonTop {
+  margin-top: 25px;
+}
+
+.tempsPng {
+  max-width: 640px;
+  display: block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -69,4 +78,54 @@ h1, h2, h3 {
 .navbar {
   display: flex;
   text-align: center;
+}
+
+.tempsCol {
+  min-width: 80px;
+}
+
+/* Set the background color of body to tan */
+body {
+  background-color: #fff;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: #DED6D6;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .tempsPng {
+    display: block;
+  }
+
+  body {
+    background-color: #D2CBCB;
+  }
+  th {
+    padding: 12px 15px !important;
+  }
+  td {
+    padding: 12px 15px !important;
+  }
+}
+
+/* On screens that are 300px or less, set the background color to olive */
+@media screen and (max-width: 480px) {
+
+  .tempsPng {
+    display: none;
+  }
+  body {
+    background-color: #5985B2;
+  }
+  th {
+    padding: 12px 4px !important;
+  }
+  td {
+    padding: 12px 4px !important;
+  }
 }
