@@ -2,7 +2,9 @@
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
+//import { BrowserRouter as Router, Switch, Route, Link, Routes, BrowserRouter } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+
 import Home from "./components/Home";
 import { SearchWeekly } from "./components/SearchWeekly";
 import { SearchHourly } from "./components/SearchHourly";
@@ -18,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-          <BrowserRouter>
+          <HashRouter>
         <div>    
           <Routes >
           <Route path='/' element={<Home/>} />
@@ -26,7 +28,7 @@ function App() {
           <Route path='/Weekly' element={<SearchWeekly/>} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
 
       <Footer />
     </div>
