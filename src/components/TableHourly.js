@@ -27,7 +27,7 @@ function TableDaily({ list, conditions }) {
   return (
     <div>
       <Link to="/Weekly">
-        <button type="button" className="btn btn-primary padButtonTop">
+        <button type="button" className="btn btn-secondary padButtonTop">
           {" "}
           View weekly forecast{" "}
         </button>

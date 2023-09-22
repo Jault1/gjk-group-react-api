@@ -24,7 +24,7 @@ function TableWeekly({ list, conditions }) {
   return (
     <div>
       <Link to="/Hourly">
-        <button type="button" className="btn btn-primary padButtonTop">
+        <button type="button" className="btn btn-secondary padButtonTop">
           {" "}
           View hourly forecast{" "}
         </button>

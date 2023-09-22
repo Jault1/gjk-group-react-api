@@ -58,7 +58,7 @@ export function SearchHourly (){
 <input type="text" className="me-3" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your city name" />
           <button type="button" className="btn btn-primary smb-5" onClick={() => getData()}>Search</button>
 
-          <button type="button" className="btn btn-primary m-2" onClick={handleShow}>
+          <button type="button" className="btn btn-outline-secondary m-2" onClick={handleShow}>
           &deg;F vs &deg;C
       </button>
 
