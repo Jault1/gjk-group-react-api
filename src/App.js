@@ -9,13 +9,11 @@ import Home from "./components/Home";
 import { SearchWeekly } from "./components/SearchWeekly";
 import { SearchHourly } from "./components/SearchHourly";
 
-import conditions from './weatherCodes.json';
+//import conditions from './weatherCodes.json';
 
-conditions = conditions.weatherCodeFullDay;
-
+//conditions = conditions?.weatherCodeFullDay;
 
 function App() {
-
 
   return (
     <div className="App">

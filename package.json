@@ -2,6 +2,7 @@
   "homepage": "https://github.com/Jault1/gjk-group-react-api",
   "name": "gjk-group-react-api",
   "version": "0.1.0",
+  "homepage": "https://jault1.github.io/gjk-group-react-api",  
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

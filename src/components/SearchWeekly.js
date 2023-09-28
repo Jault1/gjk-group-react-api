@@ -3,7 +3,7 @@ import TableWeekly from "./TableWeekly";
 import TableDaily from "./TableHourly"
 import { getWeatherData } from "../api/weatherapi";
 import {ScaleLoader} from 'react-spinners';
-import conditions from '../weatherCodes.json';
+//import conditions from '../weatherCodes.json';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -17,7 +17,7 @@ const override: CSSProperties = {
   borderColor: "#5985B2",
 };
 
-conditions = conditions.weatherCodeFullDay;
+//conditions = conditions?.weatherCodeFullDay;
 
 export function SearchWeekly (){ 
     
@@ -109,8 +109,7 @@ export function SearchWeekly (){
           {/* <Button variant="primary">Yep</Button> */}
         </Modal.Footer>
       </Modal>            
-            <TableWeekly list={weatherdata?.timelines?.daily} conditions={conditions} />
-            {/* <TableDaily list={weatherdata?.timelines?.hourly} conditions={conditions} /> */}
+            <TableWeekly list={weatherdata?.timelines?.daily} />
             </>
           ) : null}
         </>
